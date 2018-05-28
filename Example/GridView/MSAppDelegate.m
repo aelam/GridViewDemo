@@ -7,12 +7,16 @@
 //
 
 #import "MSAppDelegate.h"
+@import StockPB;
 
 @implementation MSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [SKServerManager.sharedManager setHosts:@[@"http://bs.m.emoney.cn"]];
+    [SKSessionManager.sharedManager setServerProvider:SKServerManager.sharedManager];
+    
+    
     return YES;
 }
 

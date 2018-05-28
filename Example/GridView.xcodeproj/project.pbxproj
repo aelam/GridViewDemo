@@ -23,6 +23,9 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		9403FD5D20BC40A1003673F8 /* GridDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9403FD5C20BC40A1003673F8 /* GridDemoViewController.m */; };
+		9403FD6120BC5460003673F8 /* WatchListGridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9403FD5F20BC5460003673F8 /* WatchListGridTableViewCell.m */; };
+		9403FD6220BC5460003673F8 /* WatchListGridTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9403FD6020BC5460003673F8 /* WatchListGridTableViewCell.xib */; };
 		EEECF773210F0190B3D603DC /* Pods_GridView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B4ADF7572E25D7B24F2A51 /* Pods_GridView_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,9 +63,14 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		8A162FDE4D8423657C6D9A8C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		91D5BDC71D0CE09E82C7A8BC /* GridView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = GridView.podspec; path = ../GridView.podspec; sourceTree = "<group>"; };
-		9B905A7E357614AF7395C2E7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		8A162FDE4D8423657C6D9A8C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		91D5BDC71D0CE09E82C7A8BC /* GridView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GridView.podspec; path = ../GridView.podspec; sourceTree = "<group>"; };
+		9403FD5B20BC40A1003673F8 /* GridDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GridDemoViewController.h; sourceTree = "<group>"; };
+		9403FD5C20BC40A1003673F8 /* GridDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GridDemoViewController.m; sourceTree = "<group>"; };
+		9403FD5E20BC5460003673F8 /* WatchListGridTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatchListGridTableViewCell.h; sourceTree = "<group>"; };
+		9403FD5F20BC5460003673F8 /* WatchListGridTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchListGridTableViewCell.m; sourceTree = "<group>"; };
+		9403FD6020BC5460003673F8 /* WatchListGridTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchListGridTableViewCell.xib; sourceTree = "<group>"; };
+		9B905A7E357614AF7395C2E7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		9EA4D03371B1017F7CDF0EA1 /* Pods_GridView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GridView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B4ADF7572E25D7B24F2A51 /* Pods_GridView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GridView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A983A9A78FB579DA29C85851 /* Pods-GridView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GridView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GridView_Tests/Pods-GridView_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +145,11 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* MSViewController.h */,
 				6003F5A6195388D20070C39A /* MSViewController.m */,
+				9403FD5B20BC40A1003673F8 /* GridDemoViewController.h */,
+				9403FD5C20BC40A1003673F8 /* GridDemoViewController.m */,
+				9403FD5E20BC5460003673F8 /* WatchListGridTableViewCell.h */,
+				9403FD5F20BC5460003673F8 /* WatchListGridTableViewCell.m */,
+				9403FD6020BC5460003673F8 /* WatchListGridTableViewCell.xib */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -283,6 +296,7 @@
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				9403FD6220BC5460003673F8 /* WatchListGridTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +412,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/GridView/GridView.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
@@ -411,6 +426,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GridView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
@@ -430,7 +446,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9403FD6120BC5460003673F8 /* WatchListGridTableViewCell.m in Sources */,
 				6003F59E195388D20070C39A /* MSAppDelegate.m in Sources */,
+				9403FD5D20BC40A1003673F8 /* GridDemoViewController.m in Sources */,
 				6003F5A7195388D20070C39A /* MSViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

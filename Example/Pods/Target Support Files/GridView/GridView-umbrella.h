@@ -11,7 +11,7 @@
 #endif
 
 #import "GridAdapterProxy.h"
-#import "GridColumnLayout.h"
+#import "GridCellLayout.h"
 #import "GridTableView.h"
 #import "GridTableViewCell.h"
 #import "ZXGGridViewController.h"

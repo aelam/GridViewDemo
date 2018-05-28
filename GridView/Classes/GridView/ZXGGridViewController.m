@@ -21,7 +21,6 @@
     self.gridTableView.gridDataSource = self;
     self.gridTableView.gridDelegate = self;
 //    self.gridTableView.gridDataSource = self;
-
     self.gridTableView.sectionHeaderHeight = 44;
     
     [self.view addSubview:self.gridTableView];
@@ -83,7 +82,7 @@
 }
 
 - (NSInteger)numberOfFixedColumnInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 
 

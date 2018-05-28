@@ -9,7 +9,6 @@
 
 extern NSNotificationName const GridTableViewCellDidScrollNotificationName;
 
-
 @protocol GridTableViewCell<NSObject>
 
 @property (nonatomic, strong, readonly) UIView *fixedColumnContentView;
@@ -23,5 +22,6 @@ extern NSNotificationName const GridTableViewCellDidScrollNotificationName;
 @property (nonatomic, strong, readonly) UIView *fixedColumnContentView;
 @property (nonatomic, strong, readonly) UIScrollView *scrollableContentView;
 @property (nonatomic, assign) CGFloat contentOffsetX;
+@property (nonatomic, assign, readwrite) CGFloat fixedColumnContentViewWidth;
 
 @end

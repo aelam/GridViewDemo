@@ -1,6 +1,6 @@
 use_frameworks!
 
-source "http://ph.benemind.com/diffusion/SPEC/emspecs.git"
+#source "http://ph.benemind.com/diffusion/SPEC/emspecs.git"
 source "https://github.com/CocoaPods/Specs.git"
 
 target 'GridView_Example' do

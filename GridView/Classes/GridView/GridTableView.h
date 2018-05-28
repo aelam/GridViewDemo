@@ -20,8 +20,8 @@
 
 @protocol GridDataSource<UITableViewDataSource>
 
-- (NSInteger)numberOfColumnInTableView:(UITableView *)tableView;
-- (NSInteger)numberOfFixedColumnInTableView:(UITableView *)tableView;
+//- (NSInteger)numberOfColumnInTableView:(UITableView *)tableView;
+//- (NSInteger)numberOfFixedColumnInTableView:(UITableView *)tableView;
 
 - (UIView *)tableView:(UITableView *)tableView viewForColumn:(NSInteger)column;
 
@@ -32,10 +32,9 @@
 
 @interface GridTableView : UITableView
 
-@property (nonatomic, assign) NSInteger fixedColumnCount;
+@property (nonatomic, assign) NSInteger numberOfFixedColumns;
+@property (nonatomic, assign) NSInteger numberOfColumns;
 @property (nonatomic, weak) id<GridDataSource> gridDataSource;
 @property (nonatomic, weak) id<GridDelegate> gridDelegate;
-
-- (UIView *)viewForIndexPath:(NSIndexPath *)indexPath column:(NSInteger)column;
 
 @end

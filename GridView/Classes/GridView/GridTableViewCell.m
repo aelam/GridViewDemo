@@ -5,6 +5,7 @@
 //  Created by ryan on 2018/5/28.
 //
 
+@import Masonry;
 #import "GridTableViewCell.h"
 
 NSNotificationName const GridTableViewCellDidScrollNotificationName = @"GridTableViewCellDidScrollNotificationName";
@@ -20,26 +21,39 @@ NSNotificationName const GridTableViewCellDidScrollNotificationName = @"GridTabl
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        self.fixedColumnContentView = [UIView new];
-        self.scrollableContentView = [[UIScrollView alloc] init];
-        self.scrollableContentView.showsVerticalScrollIndicator = NO;
-        self.scrollableContentView.showsHorizontalScrollIndicator = NO;
-
-        self.scrollableContentView.delegate = self;
-        
-        [self.contentView addSubview:self.fixedColumnContentView];
-        [self.contentView addSubview:self.scrollableContentView];
-
-        self.scrollableContentView.userInteractionEnabled = NO;
-        [self.contentView addGestureRecognizer:self.scrollableContentView.panGestureRecognizer];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(otherCellDidScroll:) name:GridTableViewCellDidScrollNotificationName object:nil];
+        [self initialize];
     }
     return self;
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self initialize];
+}
+
+- (void)initialize {
+    self.fixedColumnContentView = [UIView new];
+    self.scrollableContentView = [[UIScrollView alloc] init];
+    self.scrollableContentView.showsVerticalScrollIndicator = NO;
+    self.scrollableContentView.showsHorizontalScrollIndicator = NO;
+    
+    self.scrollableContentView.delegate = self;
+    
+    [self.contentView addSubview:self.fixedColumnContentView];
+    [self.contentView addSubview:self.scrollableContentView];
+    
+    self.scrollableContentView.userInteractionEnabled = NO;
+    [self.contentView addGestureRecognizer:self.scrollableContentView.panGestureRecognizer];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(otherCellDidScroll:) name:GridTableViewCellDidScrollNotificationName object:nil];
+
+}
+
+- (void)setFixedColumnContentViewWidth:(CGFloat)fixedColumnContentViewWidth {
+    if (_fixedColumnContentViewWidth == fixedColumnContentViewWidth) {
+        return;
+    }
+    _fixedColumnContentViewWidth = fixedColumnContentViewWidth;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -63,6 +77,16 @@ NSNotificationName const GridTableViewCellDidScrollNotificationName = @"GridTabl
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     [[NSNotificationCenter defaultCenter] postNotificationName:GridTableViewCellDidScrollNotificationName object:self];
+}
+
+- (CGFloat)contentOffsetX {
+    return self.scrollableContentView.contentOffset.x;
+}
+
+- (void)setContentOffsetX:(CGFloat)contentOffsetX {
+    CGPoint contentOffset = self.scrollableContentView.contentOffset;
+    contentOffset.x = contentOffsetX;
+    self.scrollableContentView.contentOffset = contentOffset;
 }
 
 @end
