@@ -1,0 +1,22 @@
+{
+  "name": "GridView",
+  "version": "0.1.0",
+  "summary": "A short description of GridView.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/aelam/GridView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "aelam": "wanglun02@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/aelam/GridView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "GridView/Classes/**/*"
+}

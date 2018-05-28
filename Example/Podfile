@@ -1,7 +1,14 @@
 use_frameworks!
 
+source "http://ph.benemind.com/diffusion/SPEC/emspecs.git"
+source "https://github.com/CocoaPods/Specs.git"
+
 target 'GridView_Example' do
   pod 'GridView', :path => '../'
+
+  pod 'StockPB', :subspecs => ['Moya', 'YMStockSupport', 'RACNetwork'], :git => 'http://ph.benemind.com/diffusion/PB/pb.git', :branch => 'EmoneyDev'
+  #pod 'StockPB', :subspecs => ['Moya', 'YMStockSupport', 'RACNetwork'], :path => '../../pb' #:git => 'http://ph.benemind.com/diffusion/PB/pb.git', :branch => 'EmoneyDev'
+
 
   target 'GridView_Tests' do
     inherit! :search_paths
@@ -11,4 +18,23 @@ target 'GridView_Example' do
     pod 'FBSnapshotTestCase'
     pod 'Expecta+Snapshots'
   end
+end
+
+# Workaround Cocoapods to mix Swift 3.2 and 4
+# Manually add to swift4Targets, otherwise assume target uses Swift 3.2
+# https://stackoverflow.com/questions/46101625/using-cocoapods-mixed-swift3-and-swift4-pods
+swift4Targets = ['Charts', 'Snapkit']
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['ENABLE_BITCODE'] = 'NO'
+            
+            #            config.build_settings['SWIFT_VERSION'] = '4.0'
+            if swift4Targets.include? target.name
+                config.build_settings['SWIFT_VERSION'] = '4.0'
+                else
+                config.build_settings['SWIFT_VERSION'] = '3.2'
+            end
+        end
+    end
 end

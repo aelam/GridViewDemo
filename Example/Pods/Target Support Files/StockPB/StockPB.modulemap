@@ -1,0 +1,6 @@
+framework module StockPB {
+  umbrella header "StockPB-umbrella.h"
+
+  export *
+  module * { export * }
+}

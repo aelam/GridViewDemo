@@ -1,0 +1,120 @@
+PODS:
+  - AFNetworking (3.2.0):
+    - AFNetworking/NSURLSession (= 3.2.0)
+    - AFNetworking/Reachability (= 3.2.0)
+    - AFNetworking/Security (= 3.2.0)
+    - AFNetworking/Serialization (= 3.2.0)
+    - AFNetworking/UIKit (= 3.2.0)
+  - AFNetworking/NSURLSession (3.2.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.0)
+  - AFNetworking/Security (3.2.0)
+  - AFNetworking/Serialization (3.2.0)
+  - AFNetworking/UIKit (3.2.0):
+    - AFNetworking/NSURLSession
+  - Alamofire (4.7.2)
+  - CocoaLumberjack/Default (3.4.2)
+  - CocoaLumberjack/Swift (3.4.2):
+    - CocoaLumberjack/Default
+  - Expecta (1.0.6)
+  - Expecta+Snapshots (3.1.1):
+    - Expecta (~> 1.0)
+    - FBSnapshotTestCase/Core (~> 2.0)
+    - Specta (~> 1.0)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - GridView (0.1.0)
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya/Core (11.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
+  - Moya/RxSwift (11.0.2):
+    - Moya/Core
+    - RxSwift (~> 4.0)
+  - Protobuf (3.3.0)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - Result (3.2.4)
+  - RxSwift (4.1.2)
+  - Specta (1.0.7)
+  - StockPB/Moya (0.3.1):
+    - Moya/RxSwift
+    - StockPB/Moya/Core (= 0.3.1)
+    - StockPB/Moya/RxSwift (= 0.3.1)
+  - StockPB/Moya/Core (0.3.1):
+    - Moya
+    - Moya/RxSwift
+    - StockPB/Network/BaseResponse
+    - StockPB/PBExtension
+  - StockPB/Moya/RxSwift (0.3.1):
+    - Moya/RxSwift
+    - StockPB/Moya/Core
+  - StockPB/Network (0.3.1):
+    - AFNetworking (~> 3.0)
+    - CocoaLumberjack/Swift
+    - StockPB/Network/BaseResponse (= 0.3.1)
+    - StockPB/PBExtension
+  - StockPB/Network/BaseResponse (0.3.1):
+    - AFNetworking (~> 3.0)
+    - CocoaLumberjack/Swift
+    - StockPB/PBExtension
+  - StockPB/PBExtension (0.3.1):
+    - Protobuf (~> 3.3.0)
+  - StockPB/RACNetwork (0.3.1):
+    - ReactiveCocoa (~> 2.5.0)
+    - StockPB/Network
+  - StockPB/YMStockSupport (0.3.1):
+    - StockPB/Network
+
+DEPENDENCIES:
+  - Expecta
+  - Expecta+Snapshots
+  - FBSnapshotTestCase
+  - GridView (from `../`)
+  - Specta
+  - StockPB/Moya (from `http://ph.benemind.com/diffusion/PB/pb.git`, branch `EmoneyDev`)
+  - StockPB/RACNetwork (from `http://ph.benemind.com/diffusion/PB/pb.git`, branch `EmoneyDev`)
+  - StockPB/YMStockSupport (from `http://ph.benemind.com/diffusion/PB/pb.git`, branch `EmoneyDev`)
+
+EXTERNAL SOURCES:
+  GridView:
+    :path: ../
+  StockPB:
+    :branch: EmoneyDev
+    :git: http://ph.benemind.com/diffusion/PB/pb.git
+
+CHECKOUT OPTIONS:
+  StockPB:
+    :commit: 8ed6e6a5c561cd708ab2712fdc9e6478cdb19cec
+    :git: http://ph.benemind.com/diffusion/PB/pb.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
+  Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
+  Expecta+Snapshots: dcff217eef506dabd6dfdc7864ea2da321fafbb8
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  GridView: 144b8e1071fec4b820a816f763d2112910da0c63
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
+  StockPB: 5b2cf001f7aa2f26c88853b5a82d5bf41973afe6
+
+PODFILE CHECKSUM: a76eb2886c5ce3e6442e06d693331ccf4bf002eb
+
+COCOAPODS: 1.4.0

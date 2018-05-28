@@ -6,6 +6,8 @@
 //  Copyright (c) 2018 aelam. All rights reserved.
 //
 
+@import GridView;
+
 #import "MSViewController.h"
 
 @interface MSViewController ()
@@ -24,6 +26,12 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)gotoGrid {
+    ZXGGridViewController *controller = [ZXGGridViewController new];
+    [self.navigationController pushViewController: controller animated: YES];
+    
 }
 
 @end

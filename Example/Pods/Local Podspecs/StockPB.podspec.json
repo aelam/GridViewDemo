@@ -1,0 +1,191 @@
+{
+  "name": "StockPB",
+  "version": "0.3.1",
+  "summary": "SKNetwork",
+  "description": "行情包PB的OC对象",
+  "homepage": "http://ph.benemind.com/diffusion/PB/pb.git",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Ryan Wang": "wanglun02@gmail.com"
+  },
+  "source": {
+    "git": "http://ph.benemind.com/diffusion/PB/pb.git",
+    "tag": "0.3.1"
+  },
+  "platforms": {
+    "ios": "7.0",
+    "osx": "10.9"
+  },
+  "pod_target_xcconfig": {
+    "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1"
+  },
+  "default_subspecs": [
+    "PBExtension",
+    "Network",
+    "RACNetwork",
+    "SKTimer",
+    "PBObjc_Ext"
+  ],
+  "subspecs": [
+    {
+      "name": "PBExtension",
+      "requires_arc": false,
+      "source_files": "StockPB/PBExtension/**/*.{h,m,c,cpp,swift}",
+      "public_header_files": "StockPB/PBExtension/**/*.h",
+      "dependencies": {
+        "Protobuf": [
+          "~> 3.3.0"
+        ]
+      }
+    },
+    {
+      "name": "Network",
+      "source_files": "StockPB/Network/**/*.{h,m,c,cpp,swift}",
+      "public_header_files": "StockPB/Network/**/*.h",
+      "exclude_files": "StockPB/Network/BaseResponse/**/*.{h,m,c,cpp,swift}",
+      "dependencies": {
+        "StockPB/PBExtension": [
+
+        ],
+        "AFNetworking": [
+          "~> 3.0"
+        ],
+        "CocoaLumberjack/Swift": [
+
+        ]
+      },
+      "subspecs": [
+        {
+          "name": "BaseResponse",
+          "requires_arc": false,
+          "source_files": "StockPB/Network/BaseResponse/**/*.{h,m,c,cpp,swift}",
+          "public_header_files": "StockPB/Network/BaseResponse/**/*.h"
+        }
+      ]
+    },
+    {
+      "name": "RACNetwork",
+      "source_files": "StockPB/RACNetwork/**/*.{h,m,c,cpp,swift}",
+      "public_header_files": "StockPB/RACNetwork/**/*.h",
+      "dependencies": {
+        "StockPB/Network": [
+
+        ],
+        "ReactiveCocoa": [
+          "~>2.5.0"
+        ]
+      }
+    },
+    {
+      "name": "PBObjc_Ext",
+      "source_files": "StockPB/PBObjc_Ext/Addtions/**/*.{h,c,m,swift}",
+      "public_header_files": "StockPB/PBObjc_Ext/Classes/**/*.h",
+      "subspecs": [
+        {
+          "name": "PBObjc",
+          "requires_arc": false,
+          "source_files": "StockPB/PBObjc_Ext/PBObjc/**/*.{h,c,m,swift}",
+          "pod_target_xcconfig": {
+            "GCC_PREPROCESSOR_DEFINITIONS": "$(inherited) GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1"
+          },
+          "dependencies": {
+            "Protobuf": [
+              "~> 3.3.0"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Protocols",
+      "requires_arc": false,
+      "source_files": "StockPB/Protocols/**/*",
+      "public_header_files": "StockPB/Protocols/**/*.h",
+      "dependencies": {
+        "StockPB/PBExtension": [
+
+        ]
+      }
+    },
+    {
+      "name": "SKTimer",
+      "source_files": "StockPB/SKTimer/**/*.{h,m,c,cpp,swift}",
+      "public_header_files": "StockPB/SKTimer/**/*.h",
+      "dependencies": {
+        "StockPB/PBObjc_Ext": [
+
+        ],
+        "StockPB/RACNetwork": [
+
+        ],
+        "ReactiveCocoa": [
+          "~>2.5.0"
+        ],
+        "GCDTimer": [
+          "~> 1.1.0"
+        ]
+      }
+    },
+    {
+      "name": "RxSwift",
+      "source_files": "StockPB/RxSwift/**/*.{h,m,c,cpp,swift}",
+      "public_header_files": "StockPB/RxSwift/**/*.h",
+      "dependencies": {
+        "StockPB/Network": [
+
+        ],
+        "RxSwift": [
+
+        ]
+      }
+    },
+    {
+      "name": "Moya",
+      "dependencies": {
+        "Moya/RxSwift": [
+
+        ]
+      },
+      "subspecs": [
+        {
+          "name": "Core",
+          "source_files": "StockPB/Moya/Core/**/*.{h,m,c,cpp,swift}",
+          "public_header_files": "StockPB/Moya/Core/**/*.h",
+          "dependencies": {
+            "StockPB/Network/BaseResponse": [
+
+            ],
+            "StockPB/PBExtension": [
+
+            ],
+            "Moya": [
+
+            ]
+          }
+        },
+        {
+          "name": "RxSwift",
+          "source_files": "StockPB/Moya/RxSwift/**/*.{h,m,c,cpp,swift}",
+          "public_header_files": "StockPB/Moya/RxSwift/**/*.h",
+          "dependencies": {
+            "StockPB/Moya/Core": [
+
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "YMStockSupport",
+      "source_files": "StockPB/YMStockSupport/**/*.{h,m,c,cpp,swift}",
+      "dependencies": {
+        "StockPB/Network": [
+
+        ]
+      }
+    }
+  ]
+}
