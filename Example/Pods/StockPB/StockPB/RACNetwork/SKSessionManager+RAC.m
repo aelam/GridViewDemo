@@ -20,6 +20,9 @@
 /**
  发送https请求
  */
+- (RACSignal *)POSTSecureSignalWithParameters:(id)parameters {
+    return [self POSTSignalWithURL:[self.serverProvider secureURL] parameters:parameters];
+}
 
 - (RACSignal *)POSTSignalWithURL:(NSString *)url parameters:(id)parameters {
     @weakify(self);

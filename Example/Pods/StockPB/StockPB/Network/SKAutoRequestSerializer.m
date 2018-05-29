@@ -32,7 +32,6 @@
     return self;
 }
 
-
 - (NSURLRequest *)requestBySerializingRequest:(NSURLRequest *)request
                                withParameters:(id)parameters
                                         error:(NSError *__autoreleasing *)error
@@ -43,17 +42,6 @@
     } else {
         return [self.JSONRequestSerializer requestBySerializingRequest:request withParameters:parameters error:error];
     }
-}
-
-- (void)setValue:(NSString *)value forHTTPHeaderField:(NSString *)field {
-    [self.JSONRequestSerializer setValue:value forHTTPHeaderField:field];
-    [self.PBRequestSerializer setValue:value forHTTPHeaderField:field];
-}
-
-- (void)clearAuthorizationHeader {
-    [super clearAuthorizationHeader];
-    [self.JSONRequestSerializer clearAuthorizationHeader];
-    [self.PBRequestSerializer clearAuthorizationHeader];
 }
 
 @end

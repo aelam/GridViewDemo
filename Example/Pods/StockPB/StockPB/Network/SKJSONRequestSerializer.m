@@ -43,6 +43,10 @@ static NSString *SKJSONProtocolIdKey = @"protocolId";
         [mutableRequest setValue:protocolId forHTTPHeaderField:@"X-Protocol-Id"];
     }
     
+    if (![mutableRequest valueForHTTPHeaderField:@"Authorization"]) {
+        [mutableRequest setValue:[SKSessionManager sharedManager].token forHTTPHeaderField:@"Authorization"];
+    }
+    
     return mutableRequest;
 }
 

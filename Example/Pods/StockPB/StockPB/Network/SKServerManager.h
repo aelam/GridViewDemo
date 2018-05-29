@@ -14,6 +14,7 @@
 
 + (instancetype)sharedManager;
 
+@property (nonatomic, strong, readwrite) NSArray<NSString *> *secureHosts;
 @property (nonatomic, strong, readwrite) NSArray<NSString *> *hosts;
 @property (nonatomic, assign) NSInteger failureThreshold;
 

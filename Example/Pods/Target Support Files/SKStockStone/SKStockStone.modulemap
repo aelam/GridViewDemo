@@ -1,0 +1,6 @@
+framework module SKStockStone {
+  umbrella header "SKStockStone-umbrella.h"
+
+  export *
+  module * { export * }
+}

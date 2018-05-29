@@ -7,6 +7,7 @@
 //
 
 @import GridView;
+@import StockGridView;
 
 #import "MSViewController.h"
 #import "GridDemoViewController.h"
@@ -30,7 +31,7 @@
 }
 
 - (IBAction)gotoGrid {
-    GridDemoViewController *controller = [GridDemoViewController new];
+    ZXGGridViewController *controller = [ZXGGridViewController new];
     [self.navigationController pushViewController: controller animated: YES];
     
 }

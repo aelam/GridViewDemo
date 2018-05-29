@@ -1,0 +1,6 @@
+framework module SKDynamicStock {
+  umbrella header "SKDynamicStock-umbrella.h"
+
+  export *
+  module * { export * }
+}

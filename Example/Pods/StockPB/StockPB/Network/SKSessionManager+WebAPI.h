@@ -14,11 +14,3 @@
 + (instancetype)sharedWebAPIManager;
 
 @end
-
-
-@interface SKSessionManager (SecureWebAPI)
-
-+ (void)setSharedSecureWebAPIManager:(SKSessionManager *)manager;
-+ (instancetype)sharedSecureWebAPIManager;
-
-@end

@@ -37,9 +37,9 @@ static SKSessionManager *sharedWebStaticManager = nil;
 
 + (NSURLSessionConfiguration *)webStaticSessionConfiguration {
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    configuration.timeoutIntervalForRequest = 15;
+    configuration.timeoutIntervalForRequest = 30;
     if (@available(iOS 11.0, *)) {
-//        configuration.waitsForConnectivity = YES;
+        configuration.waitsForConnectivity = YES;
     } else {
     }
 

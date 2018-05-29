@@ -1,0 +1,6 @@
+framework module StockGridView {
+  umbrella header "StockGridView-umbrella.h"
+
+  export *
+  module * { export * }
+}

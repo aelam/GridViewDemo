@@ -24,7 +24,7 @@ extern NSString const* SKXProtocolIdKey;
 
 @property (nonatomic, strong) id<SKServerProvider> serverProvider;
 @property (nonatomic, strong, readonly) NSSet<id<SKRequestMiddleWare>> *requestMiddleWares;
-//@property (nonatomic, strong) NSString *token;
+@property (nonatomic, strong) NSString *token;
 
 - (void)addRequestMiddleWare:(id<SKRequestMiddleWare>)object;
 - (void)removeRequestMiddleWare:(id<SKRequestMiddleWare>)object;

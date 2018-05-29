@@ -61,6 +61,10 @@
         }
     }
     
+    if (![mutableRequest valueForHTTPHeaderField:@"Authorization"]) {
+        [mutableRequest setValue:[SKSessionManager sharedManager].token forHTTPHeaderField:@"Authorization"];
+    }
+    
     [mutableRequest setHTTPBody:[message data]];
     
     return mutableRequest;

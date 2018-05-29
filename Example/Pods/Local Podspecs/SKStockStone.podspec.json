@@ -1,0 +1,81 @@
+{
+  "name": "SKStockStone",
+  "version": "0.1.13",
+  "summary": "A framework of EMStockX stocks",
+  "description": "A framework of EMStockX stocks list for stockMode and Formatter",
+  "homepage": "http://ph.benemind.com/diffusion/STONE/stone",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "songbo": "songbo469621765@163.com"
+  },
+  "source": {
+    "git": "http://ph.benemind.com/diffusion/STONE/stone.git",
+    "tag": "0.1.13"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "default_subspecs": [
+    "StockCore",
+    "StockCodeType",
+    "StockFormatter",
+    "StockColorFormatter"
+  ],
+  "subspecs": [
+    {
+      "name": "StockCore",
+      "source_files": "SKStockStone/Classes/Core/**/*.{h,c,m,swift}"
+    },
+    {
+      "name": "StockFormatter",
+      "source_files": "SKStockStone/Classes/Formatter/**/*.{h,c,m,swift}",
+      "dependencies": {
+        "SKStockStone/StockCore": [
+
+        ]
+      }
+    },
+    {
+      "name": "StockColorFormatter",
+      "source_files": "SKStockStone/Classes/ColorFormatter/**/*.{h,c,m,swift}",
+      "dependencies": {
+        "SKStockStone/StockFormatter": [
+
+        ]
+      }
+    },
+    {
+      "name": "SKStockColorDefaultIMP",
+      "source_files": "SKStockStone/Classes/SKStockColorDefaultIMP/**/*.{h,c,m,swift}",
+      "dependencies": {
+        "SKStockStone/StockColorFormatter": [
+
+        ],
+        "MSThemeModuleCommon": [
+          "~> 1.0.0.beta.9"
+        ]
+      }
+    },
+    {
+      "name": "YMStockMarketColors",
+      "source_files": "SKStockStone/Classes/YMStockColors/**/*.{h,c,m,swift}",
+      "dependencies": {
+        "SKStockStone/StockColorFormatter": [
+
+        ]
+      }
+    },
+    {
+      "name": "StockCodeType",
+      "source_files": "SKStockStone/Classes/StockCodeType/**/*.{h,c,m,swift}",
+      "dependencies": {
+        "NSDate-Additions": [
+
+        ]
+      }
+    }
+  ]
+}

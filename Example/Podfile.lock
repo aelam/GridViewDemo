@@ -14,7 +14,6 @@ PODS:
   - AFNetworking/Serialization (3.2.0)
   - AFNetworking/UIKit (3.2.0):
     - AFNetworking/NSURLSession
-  - Alamofire (4.7.2)
   - CocoaLumberjack/Default (3.4.2)
   - CocoaLumberjack/Swift (3.4.2):
     - CocoaLumberjack/Default
@@ -28,17 +27,12 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
+  - GCDTimer (1.1.0)
   - GridView (0.1.0):
     - Masonry
   - Masonry (1.1.0)
-  - Moya (11.0.2):
-    - Moya/Core (= 11.0.2)
-  - Moya/Core (11.0.2):
-    - Alamofire (~> 4.1)
-    - Result (~> 3.0)
-  - Moya/RxSwift (11.0.2):
-    - Moya/Core
-    - RxSwift (~> 4.0)
+  - NSDate-Additions (0.0.11)
+  - PINCache (2.3)
   - Protobuf (3.3.0)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
@@ -47,21 +41,48 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
-  - Result (3.2.4)
-  - RxSwift (4.1.2)
+  - SKDynamicStock/SKDynamicKit (0.1.3):
+    - PINCache
+    - ReactiveCocoa (~> 2.5.0)
+    - SKDynamicStock/SKDynamicKit/pbobjc (= 0.1.3)
+    - SKDynamicStock/SKDynamicKit/pbobjc_ext (= 0.1.3)
+    - SKStockStone (~> 0.1.8)
+    - StockPB
+  - SKDynamicStock/SKDynamicKit/pbobjc (0.1.3):
+    - PINCache
+    - ReactiveCocoa (~> 2.5.0)
+    - SKStockStone (~> 0.1.8)
+    - StockPB
+  - SKDynamicStock/SKDynamicKit/pbobjc_ext (0.1.3):
+    - PINCache
+    - ReactiveCocoa (~> 2.5.0)
+    - SKDynamicStock/SKDynamicKit/pbobjc
+    - SKStockStone (~> 0.1.8)
+    - StockPB
+  - SKStockStone (0.1.13):
+    - SKStockStone/StockCodeType (= 0.1.13)
+    - SKStockStone/StockColorFormatter (= 0.1.13)
+    - SKStockStone/StockCore (= 0.1.13)
+    - SKStockStone/StockFormatter (= 0.1.13)
+  - SKStockStone/StockCodeType (0.1.13):
+    - NSDate-Additions
+  - SKStockStone/StockColorFormatter (0.1.13):
+    - SKStockStone/StockFormatter
+  - SKStockStone/StockCore (0.1.13)
+  - SKStockStone/StockFormatter (0.1.13):
+    - SKStockStone/StockCore
   - Specta (1.0.7)
-  - StockPB/Moya (0.3.1):
-    - Moya/RxSwift
-    - StockPB/Moya/Core (= 0.3.1)
-    - StockPB/Moya/RxSwift (= 0.3.1)
-  - StockPB/Moya/Core (0.3.1):
-    - Moya
-    - Moya/RxSwift
-    - StockPB/Network/BaseResponse
-    - StockPB/PBExtension
-  - StockPB/Moya/RxSwift (0.3.1):
-    - Moya/RxSwift
-    - StockPB/Moya/Core
+  - StockGridView (0.1.0):
+    - GridView
+    - SKDynamicStock/SKDynamicKit
+    - SKStockStone
+    - UIColor-HexString
+  - StockPB (0.3.1):
+    - StockPB/Network (= 0.3.1)
+    - StockPB/PBExtension (= 0.3.1)
+    - StockPB/PBObjc_Ext (= 0.3.1)
+    - StockPB/RACNetwork (= 0.3.1)
+    - StockPB/SKTimer (= 0.3.1)
   - StockPB/Network (0.3.1):
     - AFNetworking (~> 3.0)
     - CocoaLumberjack/Swift
@@ -73,51 +94,73 @@ PODS:
     - StockPB/PBExtension
   - StockPB/PBExtension (0.3.1):
     - Protobuf (~> 3.3.0)
+  - StockPB/PBObjc_Ext (0.3.1):
+    - StockPB/PBObjc_Ext/PBObjc (= 0.3.1)
+  - StockPB/PBObjc_Ext/PBObjc (0.3.1):
+    - Protobuf (~> 3.3.0)
   - StockPB/RACNetwork (0.3.1):
     - ReactiveCocoa (~> 2.5.0)
     - StockPB/Network
+  - StockPB/SKTimer (0.3.1):
+    - GCDTimer (~> 1.1.0)
+    - ReactiveCocoa (~> 2.5.0)
+    - StockPB/PBObjc_Ext
+    - StockPB/RACNetwork
   - StockPB/YMStockSupport (0.3.1):
     - StockPB/Network
+  - UIColor-HexString (1.3.0)
 
 DEPENDENCIES:
   - Expecta
   - Expecta+Snapshots
   - FBSnapshotTestCase
   - GridView (from `../`)
+  - SKStockStone (from `http://ph.benemind.com/diffusion/STONE/stone.git`, branch `EmoneyDev`)
   - Specta
-  - StockPB/Moya (from `http://ph.benemind.com/diffusion/PB/pb.git`, branch `EmoneyDev`)
+  - StockGridView (from `../`)
   - StockPB/RACNetwork (from `http://ph.benemind.com/diffusion/PB/pb.git`, branch `EmoneyDev`)
   - StockPB/YMStockSupport (from `http://ph.benemind.com/diffusion/PB/pb.git`, branch `EmoneyDev`)
 
 EXTERNAL SOURCES:
   GridView:
     :path: ../
+  SKStockStone:
+    :branch: EmoneyDev
+    :git: http://ph.benemind.com/diffusion/STONE/stone.git
+  StockGridView:
+    :path: ../
   StockPB:
     :branch: EmoneyDev
     :git: http://ph.benemind.com/diffusion/PB/pb.git
 
 CHECKOUT OPTIONS:
+  SKStockStone:
+    :commit: 5b6139f2abb47ce2d1759e13bd2bce14889c36b6
+    :git: http://ph.benemind.com/diffusion/STONE/stone.git
   StockPB:
     :commit: 8ed6e6a5c561cd708ab2712fdc9e6478cdb19cec
     :git: http://ph.benemind.com/diffusion/PB/pb.git
 
 SPEC CHECKSUMS:
   AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   CocoaLumberjack: db7cc9e464771f12054c22ff6947c5a58d43a0fd
   Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
   Expecta+Snapshots: dcff217eef506dabd6dfdc7864ea2da321fafbb8
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  GCDTimer: 5837a5d70a464f86cbc9c56d75efc68f7e7c2fb8
   GridView: b83772bd80ebc148eeb4ffbeaaddc9f5c43fe59c
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  Moya: a725035953bc1c0eb1be505ab903984501d82440
+  NSDate-Additions: b26bd8c9a7303672c2d23c3c6d1c4b9456c8d8da
+  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
-  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
-  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SKDynamicStock: 77193abad0d2600d31412194cb2f775502d9208c
+  SKStockStone: 93d410945dff3b3d0958fc72aedd20cae9a21fc0
   Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
+  StockGridView: 204e0e7a268f0d22e6ca8aaa5250121e8bdd5fdb
   StockPB: 5b2cf001f7aa2f26c88853b5a82d5bf41973afe6
+  UIColor-HexString: fadc2e1389db19147ac99dee92222d3bd8bfec4a
 
-PODFILE CHECKSUM: dc445bf61def6b01722bd28e39f899d96dd42257
+PODFILE CHECKSUM: 9b34e023b796e565eb12f7b62f32b98c570882a7
 
 COCOAPODS: 1.4.0

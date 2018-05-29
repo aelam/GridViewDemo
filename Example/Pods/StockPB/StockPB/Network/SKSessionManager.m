@@ -12,16 +12,9 @@
 #import "SKAutoRequestSerializer.h"
 #import "SKServerProvider.h"
 #import "SKRequestMiddleWare.h"
-#import <CocoaLumberjack/CocoaLumberjack.h>
 
 NSString const* SKXProtocolIdKey = @"X-Protocol-Id";
 NSInteger const SKPBProtocolAutomatic = -1;
-
-#if DEBUG
-static const int ddLogLevel = DDLogLevelVerbose;
-#else
-static const int ddLogLevel = DDLogLevelVerbose;
-#endif
 
 @interface SKSessionManager () {
     NSMutableSet<id<SKRequestMiddleWare>> *_requestMiddleWares;
@@ -49,9 +42,10 @@ static SKSessionManager *sharedManager = nil;
 
 + (NSURLSessionConfiguration *)defaultSessionConfiguration {
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
-    configuration.timeoutIntervalForRequest = 15;
+    configuration.timeoutIntervalForRequest = 30;
+
     if (@available(iOS 11.0, *)) {
-//        configuration.waitsForConnectivity = YES;
+        configuration.waitsForConnectivity = YES;
     } else {
     }
 
@@ -67,16 +61,6 @@ static SKSessionManager *sharedManager = nil;
                                     ]];
         
         _requestMiddleWares = [NSMutableSet set];
-//        AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
-//        NSData *certData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"*.emoney.cn" ofType:@"cer"]];
-//        NSSet *cerSet  = [NSSet setWithObject:certData];
-//        if (certData) {
-//            [securityPolicy setPinnedCertificates:cerSet];
-//        }
-//
-//        securityPolicy.allowInvalidCertificates = YES;
-//        securityPolicy.validatesDomainName = NO;
-//        self.securityPolicy = securityPolicy;
     }
     
     return self;
@@ -104,28 +88,9 @@ static SKSessionManager *sharedManager = nil;
     return [super POST:URLString parameters:parameters progress:uploadProgress success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         success(task, responseObject);
         [weakSelf handleSuccess:task responseObject:responseObject];
-        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)task.response;
-        if ([httpResponse respondsToSelector:@selector(allHeaderFields)]) {
-            NSDictionary *dictionary = [httpResponse allHeaderFields];
-            NSString *log = [NSString stringWithFormat:@"(Success)->URL:%@,StatusCode:%ld,ProtocolId:%@\r",httpResponse.URL.absoluteString,(long)httpResponse.statusCode,dictionary[@"X-Protocol-Id"]];
-            DDLogVerbose(@"%@",log);
-        }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failure(task, error);
         [weakSelf handleFail:task error:error];
-        @try {
-            NSDictionary *userInfo = error.userInfo;
-            if (userInfo != nil) {
-                NSURL *url = userInfo[@"NSErrorFailingURLKey"];
-                NSHTTPURLResponse *httpRes = userInfo[@"com.alamofire.serialization.response.error.response"];
-                NSString *errorString = [NSString stringWithFormat:@"(Error)->URL:%@,StatusCode:%ld,ProtocolId:%@,Description:%@\r",url.absoluteString,(long)httpRes.statusCode,httpRes.allHeaderFields[@"X-Protocol-Id"],error.localizedDescription];
-                DDLogError(@"%@",errorString);
-            }
-        }
-        @catch (NSException *exception) {
-        }
-        @finally {
-        }
     }];
 
 }

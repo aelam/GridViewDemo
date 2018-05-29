@@ -13,8 +13,8 @@
 #import "GridAdapterProxy.h"
 #import "GridCellLayout.h"
 #import "GridTableView.h"
+#import "GridTableViewAdapter.h"
 #import "GridTableViewCell.h"
-#import "ZXGGridViewController.h"
 
 FOUNDATION_EXPORT double GridViewVersionNumber;
 FOUNDATION_EXPORT const unsigned char GridViewVersionString[];

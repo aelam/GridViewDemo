@@ -43,12 +43,27 @@
     }
 }
 
+- (void)setSecureHosts:(NSArray<NSString *> *)secureHosts {
+    if (_secureHosts != secureHosts) {
+        _secureHosts = secureHosts;
+        [self _reset];
+    }
+}
+
 - (NSString *)baseURL {
     if ([self.hosts count] == 0) {
         return nil;
     }
     
     return self.hosts[_currentHostIndex];
+}
+
+- (NSString *)secureURL {
+    if ([self.secureHosts count] == 0) {
+        return nil;
+    }
+    
+    return self.secureHosts[_currentHostIndex];
 }
 
 // TODO: 统计成功或失败次数 再决定切换服务器

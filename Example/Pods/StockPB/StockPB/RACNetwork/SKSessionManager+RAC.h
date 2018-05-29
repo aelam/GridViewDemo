@@ -16,6 +16,7 @@
 
 // POST
 - (RACSignal *)POSTSignalWithParameters:(id)parameters;
+- (RACSignal *)POSTSecureSignalWithParameters:(id)parameters;
 - (RACSignal *)POSTSignalWithURL:(NSString *)url parameters:(id)parameters;// POST
 
 // GET

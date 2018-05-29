@@ -1,14 +1,17 @@
 use_frameworks!
+platform :ios, '8.0'
 
-#source "http://ph.benemind.com/diffusion/SPEC/emspecs.git"
+source "http://ph.benemind.com/diffusion/SPEC/emspecs.git"
 source "https://github.com/CocoaPods/Specs.git"
 
 target 'GridView_Example' do
   pod 'GridView', :path => '../'
+  pod 'StockGridView', :path => '../'
+  
 
-  pod 'StockPB', :subspecs => ['Moya', 'YMStockSupport', 'RACNetwork'], :git => 'http://ph.benemind.com/diffusion/PB/pb.git', :branch => 'EmoneyDev'
+  pod 'StockPB', :subspecs => ['YMStockSupport', 'RACNetwork'], :git => 'http://ph.benemind.com/diffusion/PB/pb.git', :branch => 'EmoneyDev'
   #pod 'StockPB', :subspecs => ['Moya', 'YMStockSupport', 'RACNetwork'], :path => '../../pb' #:git => 'http://ph.benemind.com/diffusion/PB/pb.git', :branch => 'EmoneyDev'
-
+  pod 'SKStockStone', :git => 'http://ph.benemind.com/diffusion/STONE/stone.git', :branch => 'EmoneyDev'
 
   target 'GridView_Tests' do
     inherit! :search_paths

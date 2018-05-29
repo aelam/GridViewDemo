@@ -23,8 +23,12 @@
 #import "BaseResponse.pbobjc.h"
 #import "GPBArray+NSArray.h"
 #import "GPBMessage+Protocol.h"
+#import "TimeStatus_Request+Protocol.h"
+#import "TimeStatusRequest.pbobjc.h"
+#import "TimeStatusResponse.pbobjc.h"
 #import "SKSessionManager+RAC.h"
-#import "SKSessionManager+YMStockWebAPI.h"
+#import "SKCheckTimeManager.h"
+#import "SKTimerManager.h"
 
 FOUNDATION_EXPORT double StockPBVersionNumber;
 FOUNDATION_EXPORT const unsigned char StockPBVersionString[];

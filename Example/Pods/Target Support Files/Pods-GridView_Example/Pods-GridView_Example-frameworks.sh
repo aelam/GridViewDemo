@@ -135,29 +135,35 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GCDTimer/GCDTimer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GridView/GridView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/NSDate-Additions/NSDate_Additions.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Result/Result.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SKDynamicStock/SKDynamicStock.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SKStockStone/SKStockStone.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/StockGridView/StockGridView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/StockPB/StockPB.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/UIColor-HexString/UIColor_HexString.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/GCDTimer/GCDTimer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GridView/GridView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Moya/Moya.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/NSDate-Additions/NSDate_Additions.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/Result/Result.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SKDynamicStock/SKDynamicStock.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SKStockStone/SKStockStone.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/StockGridView/StockGridView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/StockPB/StockPB.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/UIColor-HexString/UIColor_HexString.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

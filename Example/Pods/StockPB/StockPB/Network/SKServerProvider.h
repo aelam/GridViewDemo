@@ -11,4 +11,5 @@
 @protocol SKServerProvider <NSObject>
 
 @property (nonatomic, readonly) NSString *baseURL;
+@property (nonatomic, readonly) NSString *secureURL;
 @end

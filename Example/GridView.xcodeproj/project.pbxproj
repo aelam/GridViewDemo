@@ -26,6 +26,7 @@
 		9403FD5D20BC40A1003673F8 /* GridDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9403FD5C20BC40A1003673F8 /* GridDemoViewController.m */; };
 		9403FD6120BC5460003673F8 /* WatchListGridTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9403FD5F20BC5460003673F8 /* WatchListGridTableViewCell.m */; };
 		9403FD6220BC5460003673F8 /* WatchListGridTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9403FD6020BC5460003673F8 /* WatchListGridTableViewCell.xib */; };
+		944FC46B20BCE5A6004BA7F8 /* StockGridView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 944FC46A20BCE5A6004BA7F8 /* StockGridView.podspec */; };
 		EEECF773210F0190B3D603DC /* Pods_GridView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B4ADF7572E25D7B24F2A51 /* Pods_GridView_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		9403FD5E20BC5460003673F8 /* WatchListGridTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WatchListGridTableViewCell.h; sourceTree = "<group>"; };
 		9403FD5F20BC5460003673F8 /* WatchListGridTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WatchListGridTableViewCell.m; sourceTree = "<group>"; };
 		9403FD6020BC5460003673F8 /* WatchListGridTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WatchListGridTableViewCell.xib; sourceTree = "<group>"; };
+		944FC46A20BCE5A6004BA7F8 /* StockGridView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = StockGridView.podspec; path = ../StockGridView.podspec; sourceTree = "<group>"; };
 		9B905A7E357614AF7395C2E7 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		9EA4D03371B1017F7CDF0EA1 /* Pods_GridView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GridView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B4ADF7572E25D7B24F2A51 /* Pods_GridView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GridView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +193,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				944FC46A20BCE5A6004BA7F8 /* StockGridView.podspec */,
 				91D5BDC71D0CE09E82C7A8BC /* GridView.podspec */,
 				8A162FDE4D8423657C6D9A8C /* README.md */,
 				9B905A7E357614AF7395C2E7 /* LICENSE */,
@@ -296,6 +299,7 @@
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				944FC46B20BCE5A6004BA7F8 /* StockGridView.podspec in Resources */,
 				9403FD6220BC5460003673F8 /* WatchListGridTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,30 +413,36 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GridView_Example/Pods-GridView_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/GCDTimer/GCDTimer.framework",
 				"${BUILT_PRODUCTS_DIR}/GridView/GridView.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/NSDate-Additions/NSDate_Additions.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SKDynamicStock/SKDynamicStock.framework",
+				"${BUILT_PRODUCTS_DIR}/SKStockStone/SKStockStone.framework",
+				"${BUILT_PRODUCTS_DIR}/StockGridView/StockGridView.framework",
 				"${BUILT_PRODUCTS_DIR}/StockPB/StockPB.framework",
+				"${BUILT_PRODUCTS_DIR}/UIColor-HexString/UIColor_HexString.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDTimer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GridView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSDate_Additions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKDynamicStock.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKStockStone.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StockGridView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StockPB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIColor_HexString.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
