@@ -6,8 +6,9 @@
 //  Copyright (c) 2018 aelam. All rights reserved.
 //
 
-#import "MSAppDelegate.h"
 @import StockPB;
+
+#import "MSAppDelegate.h"
 
 @implementation MSAppDelegate
 
@@ -15,7 +16,6 @@
 {
     [SKServerManager.sharedManager setHosts:@[@"http://bs.m.emoney.cn"]];
     [SKSessionManager.sharedManager setServerProvider:SKServerManager.sharedManager];
-    
     
     return YES;
 }

@@ -43,6 +43,7 @@
         @strongify(self)
         return [self refreshSignal];
     }];
+    
 
 }
 
@@ -90,7 +91,7 @@
         self.sortOption.sortAsce = !self.sortOption.sortAsce;
     } else {
         self.sortOption.sortField = field;
-        self.sortOption.sortAsce = YES;
+        self.sortOption.sortAsce = NO;
     }
 }
 

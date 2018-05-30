@@ -127,8 +127,8 @@ static NSInteger const kColumnViewTagOffset = 1000;
     CGRect rect =  cell.frame;
     rect.size.width = tableView.bounds.size.width;
     cell.layer.borderWidth = 1;
-    cell.layer.borderColor = [UIColor yellowColor].CGColor;
-    cell.clipsToBounds = YES;
+//    cell.layer.borderColor = [UIColor yellowColor].CGColor;
+//    cell.clipsToBounds = YES;
     
     [self prepareHeaderLayout:cell forSection:section];
     [self addGestureOnHeader:cell];

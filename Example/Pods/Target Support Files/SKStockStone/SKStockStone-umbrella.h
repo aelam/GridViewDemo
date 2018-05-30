@@ -27,6 +27,7 @@
 #import "SKStockFormatter.h"
 #import "SKStockStringFormatter.h"
 #import "StringFormat.h"
+#import "YMStockColorConfiguration.h"
 
 FOUNDATION_EXPORT double SKStockStoneVersionNumber;
 FOUNDATION_EXPORT const unsigned char SKStockStoneVersionString[];

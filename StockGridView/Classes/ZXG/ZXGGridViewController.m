@@ -101,7 +101,7 @@
 
 // MARK: - - 更新
 - (void)tableView:(UITableView *)tableView willDisplayColumnView:(UIView *)convertView forIndexPath:(NSIndexPath *)indexPath column:(NSInteger)column {
-    NSLog(@"更新[%zd, %zd, %zd]", indexPath.section, indexPath.row, column);
+//    NSLog(@"更新[%zd, %zd, %zd]", indexPath.section, indexPath.row, column);
     SKStockRequireField fieldId = [self.displayFieldIds[column] intValue];
     
     id<SKStock> stock = self.viewModel.stocks[indexPath.row];
@@ -110,25 +110,33 @@
 
     if (column == 0) {
         YMGridNameView *nameView = (YMGridNameView *)convertView;
-        NSString *fieldName = [RankFieldNameMapping fieldsIdNameMapping][self.displayFieldIds[column]];
         
         nameView.nameLabel.text = stock.stockName;
         nameView.codeLabel.text = stock.codeName;
-        nameView.rongImageView.hidden = [stock[GOODS_DOCTOR_FLAG] boolValue];
+        nameView.rongImageView.hidden = [stock[MARGIN_TRADING_FLAG] boolValue];
     } else {
         UILabel *textLabel = (UILabel *)convertView;
         textLabel.text = strings[fieldId];
-//        textLabel.textColor = colors[fieldId];
-        textLabel.textColor = [UIColor whiteColor];
-
+        textLabel.textColor = colors[fieldId];//[UIColor whiteColor];
     }
 }
 
 
 - (void)tableView:(UITableView *)tableView willDisplayColumnView:(UIView *)convertView inSection:(NSInteger)section column:(NSInteger)column {
+    
+    SKStockRequireField field = self.displayFieldIds[column].intValue;
     NSString *fieldName = [RankFieldNameMapping fieldsIdNameMapping][self.displayFieldIds[column]];
     UILabel *textLabel = (UILabel *)convertView;
-    textLabel.text = fieldName;
+
+    SortedList_Request_SortOptions *sortOptions = self.viewModel.sortOption;
+    NSString *arrow = @"";
+    if (sortOptions) {
+        if (sortOptions.sortField == field) {
+            arrow = (sortOptions.sortAsce ? @"↑" : @"↓");
+        }
+    }
+    
+    textLabel.text = [fieldName stringByAppendingString:arrow];
 
 }
 
@@ -139,9 +147,9 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView widthForColumn:(NSInteger)column {
-    if (column % 2 != 0) {
-        return 60;
-    }
+//    if (column % 2 != 0) {
+//        return 60;
+//    }
     return 100;
 }
 
@@ -171,7 +179,6 @@
     
     return view;
 }
-
 
 // MARK: - 需要的地方只创建一次只有就不会在调用
 - (UIView *)tableView:(UITableView *)tableView viewForCellColumn:(NSInteger)column {

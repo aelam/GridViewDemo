@@ -71,6 +71,8 @@ PODS:
   - SKStockStone/StockCore (0.1.13)
   - SKStockStone/StockFormatter (0.1.13):
     - SKStockStone/StockCore
+  - SKStockStone/YMStockMarketColors (0.1.13):
+    - SKStockStone/StockColorFormatter
   - Specta (1.0.7)
   - StockGridView (0.1.0):
     - GridView
@@ -115,7 +117,7 @@ DEPENDENCIES:
   - Expecta+Snapshots
   - FBSnapshotTestCase
   - GridView (from `../`)
-  - SKStockStone (from `http://ph.benemind.com/diffusion/STONE/stone.git`, branch `EmoneyDev`)
+  - SKStockStone/YMStockMarketColors (from `http://ph.benemind.com/diffusion/STONE/stone.git`, branch `EmoneyDev`)
   - Specta
   - StockGridView (from `../`)
   - StockPB/RACNetwork (from `http://ph.benemind.com/diffusion/PB/pb.git`, branch `EmoneyDev`)
@@ -161,6 +163,6 @@ SPEC CHECKSUMS:
   StockPB: 5b2cf001f7aa2f26c88853b5a82d5bf41973afe6
   UIColor-HexString: fadc2e1389db19147ac99dee92222d3bd8bfec4a
 
-PODFILE CHECKSUM: 9b34e023b796e565eb12f7b62f32b98c570882a7
+PODFILE CHECKSUM: c438c5ef8727492585c750c386d2b933e3253e83
 
 COCOAPODS: 1.4.0
